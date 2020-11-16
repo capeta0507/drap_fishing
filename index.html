@@ -203,13 +203,41 @@
         console.log('pos_top', pos_top)
         console.log('pos_left', pos_left)
 
+        let div01_top = this_div01.style.top;
+        let div01_left = this_div01.style.left;
+
+        div01_top = div01_top.split('px');
+        div01_left = div01_left.split('px');
+
+        div01_top = div01_top[0];
+        div01_left = div01_left[0];
+
+        div01_top = parseInt(div01_top);
+        div01_left = parseInt(div01_left);
         console.log('this_div01', this_div01)
+        console.log('div01_top', div01_top)
+        console.log('div01_left', div01_left)
+
+        let div02_top = this_div02.style.top;
+        let div02_left = this_div02.style.left;
+
+        div02_top = div02_top.split('px');
+        div02_left = div02_left.split('px');
+
+        div02_top = div02_top[0];
+        div02_left = div02_left[0];
+
+        div02_top = parseInt(div02_top);
+        div02_left = parseInt(div02_left);
+
         console.log('this_div02', this_div02)
-        if(pos_top < 180 && pos_top > 120 && pos_left > 70 && pos_left < 130){
+        console.log('div02_top', div02_top)
+        console.log('div02_left', div02_left)
+        if(div01_top < 180 && div01_top > 120 && div01_left > 70 && div01_left < 130){
           $('#mydiv').hide();
           $('.take01').show();
         }
-        if(pos_top > 260 && pos_top < 340 && pos_left > 260 && pos_left < 340){
+        if(div02_top > 260 && div02_top < 340 && div02_left > 260 && div02_left < 340){
           $('#mydiv2').hide();
           $('.take02').show();
         }
