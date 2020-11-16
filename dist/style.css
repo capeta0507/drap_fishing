@@ -1,0 +1,89 @@
+/**
+ * Drag and Drop Basic
+ **/
+[draggable="true"] {
+  /*
+ To prevent user selecting inside the drag source
+*/
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.dragFlex {
+  display: flex;
+}
+.drag-drop-basic .source-container {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #CCC;
+  margin: 1rem;
+}
+.drag-drop-basic #target-container {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid steelblue;
+  top: 30%;
+  left: 20%;
+  /* margin: 0 auto; */
+  /* margin-top: 20px */
+}
+.drag-drop-basic #target-container2 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgb(255, 0, 0);
+  top: 50%;
+  left: 30%;
+  /* margin: 0 auto; */
+  /* margin-top: 20px */
+}
+.drag-drop-basic #target-container3 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgb(40, 250, 68);
+  top: 25%;
+  left: 60%;
+  /* margin: 0 auto; */
+  /* margin-top: 20px */
+}
+.drag-drop-basic #target-container4 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgb(231, 19, 231);
+  top: 30%;
+  left: 50%;
+  /* margin: 0 auto; */
+  /* margin-top: 20px */
+}
+.drag-drop-basic #drag-source {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: steelblue;
+}
+.drag-drop-basic #drag-source2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgb(255, 0, 0);
+}
+.drag-drop-basic #drag-source3 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgb(40, 250, 68);
+}
+.drag-drop-basic #drag-source4 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgb(231, 19, 231);
+}
+.hover{
+  box-shadow: 0 0 20px rgb(233, 198, 0);
+}

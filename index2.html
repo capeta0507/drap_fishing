@@ -12,6 +12,11 @@
     padding: 0;
     box-sizing: border-box;
   }
+  .content{
+    width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
   #mydiv {
     position: absolute;
     z-index: 9;
@@ -55,7 +60,7 @@
     width: 144px;
     height: 40px;
     top: 150px;
-    left: 300px;
+    left: 100px;
   }
   #myPag02{
     width: 58px;
@@ -63,17 +68,57 @@
     top: 300px;
     left: 300px;
   }
+  .takePag div{
+    padding: 10px;
+    z-index: 10;
+    text-align: center;
+    background-color: #2196F3;
+    color: #fff;
+  }
+  .take01{
+    width: 144px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+  .take02{
+    width: 58px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+  @media screen and (max-width:992px){
+    .content{
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+  }
 </style>
 <body>
-  <div id="mydiv">
-    <div id="mydivheader">Click here to move</div>
+  <div class="content">
+    <div id="mydiv" style="top: 0;left: 0;">
+      <div id="mydivheader">Click here to move</div>
+    </div>
+    <div id="mydiv2" style="top: 0;left: 150px;">
+      <div id="mydivheader2">move</div>
+    </div>
+  
+    <div id="myPag01" class="package">
+      <div class="takePag take01">
+        <div>Click here to move</div>
+      </div>
+    </div>
+    <div id="myPag02" class="package">
+      <div class="takePag take02">
+        <div>move</div>
+      </div>
+    </div>
   </div>
-  <div id="mydiv2">
-    <div id="mydivheader2">move</div>
-  </div>
-
-  <div id="myPag01" class="package"></div>
-  <div id="myPag02" class="package"></div>
     
   <script>
     //Make the DIV element draggagle:
@@ -91,7 +136,7 @@
         elmnt.onmousedown = dragMouseDown;
         elmnt.ontouchstart = dragMouseDown;
       }
-    
+
       function dragMouseDown(e) {
         e = e || window.event;
         e.preventDefault();
@@ -113,8 +158,8 @@
         pos2 = pos4 - e.clientY;
         pos3 = e.clientX;
         pos4 = e.clientY;
-        console.log('pos3', pos3)
-        console.log('pos4', pos4)
+        // console.log('pos3', pos3)
+        // console.log('pos4', pos4)
         // set the element's new position:
         elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
         elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
@@ -127,20 +172,47 @@
         pos2 = pos4 - e.touches[0].clientY;
         pos3 = e.touches[0].clientX;
         pos4 = e.touches[0].clientY;
-        console.log('pos3', pos3)
-        console.log('pos4', pos4)
+        // console.log('pos3', pos3)
+        // console.log('pos4', pos4)
         // set the element's new position:
         elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
         elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
       }
     
       function closeDragElement() {
+        let this_div01 = document.getElementById("mydiv");
+        let this_div02 = document.getElementById("mydiv2");
         /* stop moving when mouse button is released:*/
         document.onmouseup = null;
         document.onmousemove = null;
 
         document.ontouchend = null;
         document.ontouchmove = null;
+        let this_pos = elmnt;
+        let pos_top = this_pos.style.top;
+        let pos_left = this_pos.style.left;
+
+        pos_top = pos_top.split('px');
+        pos_left = pos_left.split('px');
+
+        pos_top = pos_top[0];
+        pos_left = pos_left[0];
+
+        pos_top = parseInt(pos_top);
+        pos_left = parseInt(pos_left);
+        console.log('pos_top', pos_top)
+        console.log('pos_left', pos_left)
+
+        console.log('this_div01', this_div01)
+        console.log('this_div02', this_div02)
+        if(pos_top < 160 && pos_top > 140 && pos_left > 90 && pos_left < 110){
+          $('#mydiv').hide();
+          $('.take01').show();
+        }
+        if(pos_top > 290 && pos_top < 310 && pos_left > 290 && pos_left < 310){
+          $('#mydiv2').hide();
+          $('.take02').show();
+        }
       }
     }
   </script>
