@@ -110,7 +110,9 @@
             }
         });
 
-        $('#myFish').on('click', function(){
+        $('#myFish').on('click', fishing);
+        $('#myFish').on('touchend', fishing);
+        function fishing(){
             var posLeft = $('#myBall').css('left')
             posLeft = posLeft.split('px');
             posLeft = posLeft[0];
@@ -164,7 +166,7 @@
                     },1500);
                 },2000);
             }
-        })
+        }
     </script>
 </body>
 </html>
