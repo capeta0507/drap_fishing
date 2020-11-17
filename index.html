@@ -91,6 +91,9 @@
     left: 0;
     display: none;
   }
+  .gift_active{
+    box-shadow: 0 0 10px yellow;
+  }
   @media screen and (max-width:992px){
     .content{
       width: 100%;
@@ -236,10 +239,12 @@
         if(div01_top < 180 && div01_top > 120 && div01_left > 70 && div01_left < 130){
           $('#mydiv').hide();
           $('.take01').show();
+          $('.take01').addClass('gift_active');
         }
         if(div02_top > 260 && div02_top < 340 && div02_left > 260 && div02_left < 340){
           $('#mydiv2').hide();
           $('.take02').show();
+          $('.take02').addClass('gift_active');
         }
       }
     }
