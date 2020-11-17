@@ -31,11 +31,38 @@
     padding: 10px;
     cursor: grab;
     z-index: 10;
-    background-color: #2196F3;
+    background-color: rgb(33, 243, 51);
     color: #fff;
   }
 
   #mydiv2 {
+    position: absolute;
+    z-index: 9;
+    background-color: #f1f1f1;
+    text-align: center;
+    border: 1px solid #d3d3d3;
+    top: 0;
+    left: 150px;
+  }
+  #mydiv3 {
+    position: absolute;
+    z-index: 9;
+    background-color: #f1f1f1;
+    text-align: center;
+    border: 1px solid #d3d3d3;
+    top: 0;
+    left: 150px;
+  }
+  #mydiv4 {
+    position: absolute;
+    z-index: 9;
+    background-color: #f1f1f1;
+    text-align: center;
+    border: 1px solid #d3d3d3;
+    top: 0;
+    left: 150px;
+  }
+  #mydiv5 {
     position: absolute;
     z-index: 9;
     background-color: #f1f1f1;
@@ -50,6 +77,27 @@
     cursor: grab;
     z-index: 10;
     background-color: #2196F3;
+    color: #fff;
+  }
+  #mydivheader3 {
+    padding: 10px;
+    cursor: grab;
+    z-index: 10;
+    background-color:  rgb(10, 134, 26);
+    color: #fff;
+  }
+  #mydivheader4 {
+    padding: 10px;
+    cursor: grab;
+    z-index: 10;
+    background-color: rgb(179, 40, 40);
+    color: #fff;
+  }
+  #mydivheader5 {
+    padding: 10px;
+    cursor: grab;
+    z-index: 10;
+    background-color: rgb(226, 33, 243);
     color: #fff;
   }
   .package{
@@ -68,11 +116,28 @@
     top: 300px;
     left: 300px;
   }
+  #myPag03{
+    width: 70px;
+    height: 40px;
+    top: 200px;
+    left: 200px;
+  }
+  #myPag04{
+    width: 70px;
+    height: 40px;
+    top: 350px;
+    left: 150px;
+  }
+  #myPag05{
+    width: 70px;
+    height: 40px;
+    top: 400px;
+    left: 400px;
+  }
   .takePag div{
     padding: 10px;
     z-index: 10;
     text-align: center;
-    background-color: #2196F3;
     color: #fff;
   }
   .take01{
@@ -81,6 +146,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    background-color: rgb(33, 243, 51);
     display: none;
   }
   .take02{
@@ -89,6 +155,34 @@
     position: absolute;
     top: 0;
     left: 0;
+    background-color: #2196F3;
+    display: none;
+  }
+  .take03{
+    width: 70px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(10, 134, 26);
+    display: none;
+  }
+  .take04{
+    width: 70px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(179, 40, 40);
+    display: none;
+  }
+  .take05{
+    width: 70px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(226, 33, 243);
     display: none;
   }
   .gift_active{
@@ -110,6 +204,15 @@
     <div id="mydiv2" style="top: 0;left: 150px;">
       <div id="mydivheader2">move</div>
     </div>
+    <div id="mydiv3" style="top: 50px;left: 0px;">
+      <div id="mydivheader3">move 2</div>
+    </div>
+    <div id="mydiv4" style="top: 50px;left: 80px;">
+      <div id="mydivheader4">move 3</div>
+    </div>
+    <div id="mydiv5" style="top: 50px;left: 160px;">
+      <div id="mydivheader5">move 4</div>
+    </div>
   
     <div id="myPag01" class="package">
       <div class="takePag take01">
@@ -121,12 +224,30 @@
         <div>move</div>
       </div>
     </div>
+    <div id="myPag03" class="package">
+      <div class="takePag take03">
+        <div>move 2</div>
+      </div>
+    </div>
+    <div id="myPag04" class="package">
+      <div class="takePag take04">
+        <div>move 3</div>
+      </div>
+    </div>
+    <div id="myPag05" class="package">
+      <div class="takePag take05">
+        <div>move 4</div>
+      </div>
+    </div>
   </div>
     
   <script>
     //Make the DIV element draggagle:
     dragElement(document.getElementById("mydiv"));
     dragElement(document.getElementById("mydiv2"));
+    dragElement(document.getElementById("mydiv3"));
+    dragElement(document.getElementById("mydiv4"));
+    dragElement(document.getElementById("mydiv5"));
     
     function dragElement(elmnt) {
       var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -185,27 +306,17 @@
       function closeDragElement() {
         let this_div01 = document.getElementById("mydiv");
         let this_div02 = document.getElementById("mydiv2");
+        let this_div03 = document.getElementById("mydiv3");
+        let this_div04 = document.getElementById("mydiv4");
+        let this_div05 = document.getElementById("mydiv5");
         /* stop moving when mouse button is released:*/
         document.onmouseup = null;
         document.onmousemove = null;
 
         document.ontouchend = null;
         document.ontouchmove = null;
-        let this_pos = elmnt;
-        let pos_top = this_pos.style.top;
-        let pos_left = this_pos.style.left;
 
-        pos_top = pos_top.split('px');
-        pos_left = pos_left.split('px');
-
-        pos_top = pos_top[0];
-        pos_left = pos_left[0];
-
-        pos_top = parseInt(pos_top);
-        pos_left = parseInt(pos_left);
-        // console.log('pos_top', pos_top)
-        // console.log('pos_left', pos_left)
-
+        // 第一塊
         let div01_top = this_div01.style.top;
         let div01_left = this_div01.style.left;
 
@@ -221,6 +332,7 @@
         // console.log('div01_top', div01_top)
         // console.log('div01_left', div01_left)
 
+        // 第二塊
         let div02_top = this_div02.style.top;
         let div02_left = this_div02.style.left;
 
@@ -235,6 +347,54 @@
 
         // console.log('div02_top', div02_top)
         // console.log('div02_left', div02_left)
+
+        // 第三塊
+        let div03_top = this_div03.style.top;
+        let div03_left = this_div03.style.left;
+
+        div03_top = div03_top.split('px');
+        div03_left = div03_left.split('px');
+
+        div03_top = div03_top[0];
+        div03_left = div03_left[0];
+
+        div03_top = parseInt(div03_top);
+        div03_left = parseInt(div03_left);
+
+        // console.log('div03_top', div03_top)
+        // console.log('div03_left', div03_left)
+
+        // 第四塊
+        let div04_top = this_div04.style.top;
+        let div04_left = this_div04.style.left;
+
+        div04_top = div04_top.split('px');
+        div04_left = div04_left.split('px');
+
+        div04_top = div04_top[0];
+        div04_left = div04_left[0];
+
+        div04_top = parseInt(div04_top);
+        div04_left = parseInt(div04_left);
+
+        // console.log('div04_top', div04_top)
+        // console.log('div04_left', div04_left)
+
+        // 第二塊
+        let div05_top = this_div05.style.top;
+        let div05_left = this_div05.style.left;
+
+        div05_top = div05_top.split('px');
+        div05_left = div05_left.split('px');
+
+        div05_top = div05_top[0];
+        div05_left = div05_left[0];
+
+        div05_top = parseInt(div05_top);
+        div05_left = parseInt(div05_left);
+
+        // console.log('div05_top', div05_top)
+        // console.log('div05_left', div05_left)
         
         if(div01_top < 180 && div01_top > 120 && div01_left > 70 && div01_left < 130){
           $('#mydiv').hide();
@@ -245,6 +405,21 @@
           $('#mydiv2').hide();
           $('.take02').show();
           $('.take02').addClass('gift_active');
+        }
+        if(div03_top > 160 && div03_top < 240 && div03_left > 160 && div03_left < 240){
+          $('#mydiv3').hide();
+          $('.take03').show();
+          $('.take03').addClass('gift_active');
+        }
+        if(div04_top > 310 && div04_top < 390 && div04_left > 110 && div04_left < 190){
+          $('#mydiv4').hide();
+          $('.take04').show();
+          $('.take04').addClass('gift_active');
+        }
+        if(div05_top > 360 && div05_top < 440 && div05_left > 360 && div05_left < 440){
+          $('#mydiv5').hide();
+          $('.take05').show();
+          $('.take05').addClass('gift_active');
         }
       }
     }
